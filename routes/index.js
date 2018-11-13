@@ -921,11 +921,7 @@ router.get('/',  (req, res) => {
 
 router.get('/:username',  (req, res) => {
 
-	console.log(datas['graphql'])
    	res.render('index', datas)
-
-
-
 
 })
 
