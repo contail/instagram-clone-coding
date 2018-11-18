@@ -919,6 +919,10 @@ router.get('/',  (req, res) => {
 })
 
 
+router.get('/error', (req,res)  =>{
+    res.render('error',res)
+})
+
 router.get('/:username',  (req, res) => {
 
    	res.render('index', datas)
