@@ -3,20 +3,58 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+        <style type="text/css">
+
+            body{
+                background:#f9f9f9
+            }
+            .nav {
+                background: #fff;
+            }
+
+            .main{
+                padding-top:72px
+            }
+            .profile_icon{
+                border-radius: 50%;
+                border:1px solid #ededed;
+            }
+            .header{
+                font-size: 32px;
+                line-height: 40px;
+                font-weight: 200;
+            }
+            .posts {
+                padding:0px;
+                margin-bottom:16px;
+                margin-top:16px;
+            }
+            .posts img{
+                width:100%;
+            }
+
+        </style>
     </head>
 
-    <body style="background:#f9f9f9">
-        <div class="container">
+    <body>
+
+        <nav class="navbar navbar-default navbar-fixed-top nav">
+            <div class="container">
+                NAV
+            </div>
+
+        </nav>
+        <div class="container main" >
 
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <div class="row">
                         <div class="col-md-4">
-                            <img style="border-radius: 50%; border:1px solid #ededed" src="{{graphql.user.profile_pic_url}}" />
+                            <img class="profile_icon" src="{{graphql.user.profile_pic_url}}" />
 
                         </div>
                         <div class="col-md-8">
-                            <h1 style="font-size: 32px;line-height: 40px;font-weight: 200;">{{graphql.user.username}}</h1>
+                            <h1 class="header">{{graphql.user.username}}</h1>
 
                             <div class="row">
                                 <div class="col-md-3">
@@ -43,13 +81,12 @@
                     </div>
 
 
-
                     <div class="row">
 
                         {{#graphql.user.edge_owner_to_timeline_media.edges}}
                             <div class="col-md-4">
-                                <div style="padding:12px">
-                                    <img style="width:100%" src="{{node.thumbnail_src}}" />
+                                <div class="posts">
+                                    <img src="{{node.thumbnail_src}}" />
                                 </div>
 
                             </div>
